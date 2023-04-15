@@ -9,11 +9,11 @@ public class Insta_login_using_wait {
                                                   //handling Exception  
 	public static void main(String[] args) throws InterruptedException {
 		
-		// Launch chrome Browser
-		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-		ChromeOptions co = new ChromeOptions();
-		co.addArguments("--remote-allow-origins=*");
-		WebDriver driver = new ChromeDriver(co);
+	// Launch chrome Browser
+	System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+	ChromeOptions co = new ChromeOptions();
+        co.addArguments("--remote-allow-origins=*");
+        WebDriver driver = new ChromeDriver(co);
         driver.manage().window().maximize();
         
         //To launch web page using get method

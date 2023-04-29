@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class MouseHoverAction {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// Open Browser
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -20,12 +20,20 @@ public class MouseHoverAction {
 		driver.get("https://www.bluestone.com/");
 		driver.findElement(By.id("denyBtn")).click();
 		// move to coin
+
 		WebElement targetElement = driver.findElement(By.xpath("//a[@title='Watch Jewellery']"));
 		Actions act = new Actions(driver);
 		act.moveToElement(targetElement).perform();
 		driver.findElement(By.xpath("//a[@title='Band']")).click();
-		driver.navigate().back();
-		driver.findElement(By.xpath("Coins")).click();
+		WebElement t = driver.findElement(By.xpath("driver.findElement(By.xpath(\"//a[@title='Band']\"));"));
+		Thread.sleep(2000);
+		t.click();
+		
+//		act.doubleClick(t).perform();
+//		WebElement target = driver.findElement(By.xpath("//a[@title='Band']"));
+//	    act.contextClick(target).build().perform();
+//	    driver.navigate().back();
+//	    driver.findElement(By.xpath("Coins")).click();
 
 	}
 

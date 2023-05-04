@@ -1,5 +1,7 @@
 package assignement;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -16,8 +18,9 @@ public class Flipkart_Xpath_by_using_Axis {
 		co.addArguments("--disable-notification");
 		WebDriver driver = new ChromeDriver(co);
 		driver.navigate().to("https://www.flipkart.com/");
-		Thread.sleep(2000);
+		
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@class='_2KpZ6l _2doB4z']")).click();
         Thread.sleep(2000);
